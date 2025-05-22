@@ -1,55 +1,55 @@
-// /api/updatedb.js
 import { Octokit } from "@octokit/rest";
 import { config } from "dotenv";
 
-config();
+config(); // Load env variables (if using local testing or Vercel)
 
 export default async function handler(req, res) {
-    if (req.method !== "POST") {
-        return res.status(405).json({ success: false, message: "Method not allowed" });
+  if (req.method !== "POST") {
+    return res.status(405).json({ success: false, message: "Method not allowed" });
+  }
+
+  const { jobid } = req.body;
+
+  if (!jobid || typeof jobid !== "string") {
+    return res.status(400).json({ success: false, message: "Missing or invalid jobid" });
+  }
+
+  const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+
+  const owner = "Kapclantyler";
+  const repo = "ids";
+  const path = "api/jobids.json";
+
+  try {
+    // Get the current contents of jobids.json
+    const { data: fileData } = await octokit.repos.getContent({ owner, repo, path });
+    const content = Buffer.from(fileData.content, "base64").toString("utf-8");
+    const json = JSON.parse(content);
+
+    if (!Array.isArray(json)) {
+      throw new Error("Invalid JSON format: expected an array");
     }
 
-    const { jobid } = req.body;
-
-    if (!jobid) {
-        return res.status(400).json({ success: false, message: "Missing jobid" });
+    // Avoid duplicates
+    if (!json.includes(jobid)) {
+      json.push(jobid);
     }
 
-    const octokit = new Octokit({
-        auth: process.env.GITHUB_TOKEN
+    // Update the file
+    const updatedContent = Buffer.from(JSON.stringify(json, null, 2)).toString("base64");
+
+    await octokit.repos.createOrUpdateFileContents({
+      owner,
+      repo,
+      path,
+      message: `Add jobid ${jobid}`,
+      content: updatedContent,
+      sha: fileData.sha
     });
 
-    const owner = "Kapclantyler";
-    const repo = "ids";
-    const path = "api/jobids.txt";
-
-    try {
-        // Get the existing file
-        const { data: file } = await octokit.repos.getContent({
-            owner,
-            repo,
-            path
-        });
-
-        // Decode content
-        const content = Buffer.from(file.content, 'base64').toString("utf-8");
-
-        // Append new jobid (if not already present)
-        const updated = content.includes(jobid) ? content : content + `\n${jobid}`;
-
-        // Update file
-        await octokit.repos.createOrUpdateFileContents({
-            owner,
-            repo,
-            path,
-            message: `Add JobId: ${jobid}`,
-            content: Buffer.from(updated).toString("base64"),
-            sha: file.sha
-        });
-
-        res.status(200).json({ success: true, message: "JobId added." });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ success: false, message: "Failed to update GitHub." });
-    }
+    res.status(200).json({ success: true, message: "JobId stored in jobids.json" });
+  } catch (err) {
+    console.error("GitHub update failed:", err);
+    res.status(500).json({ success: false, message: "GitHub update failed", error: err.message });
+  }
 }
