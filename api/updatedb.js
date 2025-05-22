@@ -1,7 +1,4 @@
 import { Octokit } from "@octokit/rest";
-import { config } from "dotenv";
-
-config(); // Load env variables (if using local testing or Vercel)
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -9,47 +6,50 @@ export default async function handler(req, res) {
   }
 
   const { jobid } = req.body;
-
   if (!jobid || typeof jobid !== "string") {
     return res.status(400).json({ success: false, message: "Missing or invalid jobid" });
   }
 
   const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
-
   const owner = "Kapclantyler";
   const repo = "ids";
   const path = "api/jobids.json";
 
   try {
-    // Get the current contents of jobids.json
+    // 1. Get current file data
     const { data: fileData } = await octokit.repos.getContent({ owner, repo, path });
     const content = Buffer.from(fileData.content, "base64").toString("utf-8");
-    const json = JSON.parse(content);
 
-    if (!Array.isArray(json)) {
-      throw new Error("Invalid JSON format: expected an array");
+    // 2. Parse JSON content
+    let json = [];
+    try {
+      json = JSON.parse(content);
+      if (!Array.isArray(json)) json = [];
+    } catch {
+      json = [];
     }
 
-    // Avoid duplicates
+    // 3. Add new jobid if missing
     if (!json.includes(jobid)) {
       json.push(jobid);
     }
 
-    // Update the file
+    // 4. Encode updated JSON
     const updatedContent = Buffer.from(JSON.stringify(json, null, 2)).toString("base64");
 
+    // 5. Commit updated file to GitHub
     await octokit.repos.createOrUpdateFileContents({
       owner,
       repo,
       path,
       message: `Add jobid ${jobid}`,
       content: updatedContent,
-      sha: fileData.sha
+      sha: fileData.sha,
     });
 
-    res.status(200).json({ success: true, message: "JobId stored in jobids.json" });
-  } catch (err) {
-    console.error("GitHub update failed:", err);
-    res.status(500).json({ success: false, message: "GitHub update failed", error: err.message });
+    return res.status(200).json({ success: true, message: "JobId stored" });
+  } catch (error) {
+    console.error("GitHub update error:", error);
+    return res.status(500).json({ success: false, message: "GitHub update failed", error: error.message });
   }
 }
