@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const token = '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';
+const token = const token = process.env.GITHUB_TOKEN;
 const owner = 'Kapclantyler';
 const repo = 'ids';
 
