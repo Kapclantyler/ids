@@ -1,59 +1,104 @@
 const { Octokit } = require("@octokit/rest");
 
 const octokit = new Octokit({
-  auth: process.env.GITHUB_TOKEN,
+  auth: process.env.GITHUB_TOKEN, // Set this in Vercel environment variables
 });
 
-module.exports = async function handler(req, res) {
-  try {
-    if (req.method !== "POST") {
-      return res.status(405).json({ message: "Method not allowed" });
-    }
+const REPO_OWNER = "Kapclantyler";
+const REPO_NAME = "ids";
+const FILE_PATH = "api/userids.json";
+const BRANCH = "main";
 
-    const { jobid, placeversion } = req.body;
+export default async function handler(req, res) {
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-    if (!jobid || !placeversion) {
-      return res.status(400).json({ message: "Missing jobid or placeversion" });
-    }
-
-    // 1. Get current jobids.json content and sha
-    const { data: fileData } = await octokit.repos.getContent({
-      owner: "Kapclantyler",
-      repo: "ids",
-      path: "api/jobids.json",
-    });
-
-    // 2. Decode base64 content
-    const content = Buffer.from(fileData.content, "base64").toString("utf8");
-    let json = {};
-    try {
-      json = JSON.parse(content);
-    } catch {
-      json = {};
-    }
-
-    // Ensure jobids key exists
-    json.jobids = json.jobids || {};
-
-    // 3. Add or update the jobid with placeversion
-    json.jobids[jobid] = placeversion;
-
-    // 4. Encode updated JSON back to base64
-    const updatedContent = Buffer.from(JSON.stringify(json, null, 2)).toString("base64");
-
-    // 5. Commit updated file to GitHub
-    await octokit.repos.createOrUpdateFileContents({
-      owner: "Kapclantyler",
-      repo: "ids",
-      path: "api/jobids.json",
-      message: `Update jobid ${jobid} with placeversion ${placeversion}`,
-      content: updatedContent,
-      sha: fileData.sha,
-    });
-
-    res.status(200).json({ message: "Job ID updated successfully" });
-  } catch (error) {
-    console.error("Error updating jobid:", error);
-    res.status(500).json({ message: "Failed to update jobid", error: error.message });
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
   }
-};
+
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  try {
+    const { userid, username, displayname } = req.body;
+
+    if (!userid) {
+      return res.status(400).json({ error: "Missing userid" });
+    }
+
+    // Get current file content
+    let currentData = { userids: {} };
+    let fileSha = null;
+
+    try {
+      const { data: fileData } = await octokit.repos.getContent({
+        owner: REPO_OWNER,
+        repo: REPO_NAME,
+        path: FILE_PATH,
+        ref: BRANCH,
+      });
+
+      fileSha = fileData.sha;
+      const content = Buffer.from(fileData.content, "base64").toString("utf-8");
+      currentData = JSON.parse(content);
+    } catch (error) {
+      // File doesn't exist yet, will create it
+      console.log("File doesn't exist, creating new one");
+    }
+
+    // Check if userid already exists
+    if (currentData.userids && currentData.userids[userid]) {
+      return res.status(200).json({ 
+        message: "UserID already tracked",
+        alreadyExists: true 
+      });
+    }
+
+    // Add new userid with metadata
+    if (!currentData.userids) {
+      currentData.userids = {};
+    }
+
+    currentData.userids[userid] = {
+      username: username || "Unknown",
+      displayname: displayname || username || "Unknown",
+      first_seen: new Date().toISOString(),
+      last_updated: new Date().toISOString()
+    };
+
+    // Update file on GitHub
+    const newContent = Buffer.from(JSON.stringify(currentData, null, 2)).toString("base64");
+
+    const updateParams = {
+      owner: REPO_OWNER,
+      repo: REPO_NAME,
+      path: FILE_PATH,
+      message: `Add UserID: ${userid} (${username || "Unknown"})`,
+      content: newContent,
+      branch: BRANCH,
+    };
+
+    if (fileSha) {
+      updateParams.sha = fileSha;
+    }
+
+    await octokit.repos.createOrUpdateFileContents(updateParams);
+
+    return res.status(200).json({ 
+      message: "UserID added successfully",
+      userid: userid,
+      username: username || "Unknown"
+    });
+
+  } catch (error) {
+    console.error("Error:", error);
+    return res.status(500).json({ 
+      error: "Internal server error",
+      details: error.message 
+    });
+  }
+}
