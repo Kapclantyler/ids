@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
+  
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
@@ -24,7 +24,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { userid, username, displayname,testing } = req.body;
+    const { userid, username, displayname, testing } = req.body;
 
     if (!userid) {
       return res.status(400).json({ error: "Missing userid" });
@@ -52,9 +52,43 @@ export default async function handler(req, res) {
 
     // Check if userid already exists
     if (currentData.userids && currentData.userids[userid]) {
+      // Check if testing status needs to be updated
+      const currentTesting = currentData.userids[userid].testing || false;
+      const newTesting = testing || false;
+      
+      if (currentTesting !== newTesting) {
+        // Update the testing field
+        currentData.userids[userid].testing = newTesting;
+        currentData.userids[userid].last_updated = new Date().toISOString();
+        
+        // Update file on GitHub
+        const newContent = Buffer.from(JSON.stringify(currentData, null, 2)).toString("base64");
+        
+        await octokit.repos.createOrUpdateFileContents({
+          owner: REPO_OWNER,
+          repo: REPO_NAME,
+          path: FILE_PATH,
+          message: `Update testing status for UserID: ${userid} (${username || "Unknown"})`,
+          content: newContent,
+          branch: BRANCH,
+          sha: fileSha,
+        });
+        
+        return res.status(200).json({ 
+          message: "Testing status updated",
+          userid: userid,
+          alreadyExists: true,
+          updated: true,
+          testing: newTesting
+        });
+      }
+      
       return res.status(200).json({ 
         message: "UserID already tracked",
-        alreadyExists: true 
+        userid: userid,
+        alreadyExists: true,
+        updated: false,
+        testing: currentTesting
       });
     }
 
@@ -73,7 +107,7 @@ export default async function handler(req, res) {
 
     // Update file on GitHub
     const newContent = Buffer.from(JSON.stringify(currentData, null, 2)).toString("base64");
-
+    
     const updateParams = {
       owner: REPO_OWNER,
       repo: REPO_NAME,
@@ -92,7 +126,8 @@ export default async function handler(req, res) {
     return res.status(200).json({ 
       message: "UserID added successfully",
       userid: userid,
-      username: username || "Unknown"
+      username: username || "Unknown",
+      testing: testing || false
     });
 
   } catch (error) {
