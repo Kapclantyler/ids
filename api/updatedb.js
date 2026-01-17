@@ -24,7 +24,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { userid, username, displayname } = req.body;
+    const { userid, username, displayname,testing } = req.body;
 
     if (!userid) {
       return res.status(400).json({ error: "Missing userid" });
@@ -67,7 +67,8 @@ export default async function handler(req, res) {
       username: username || "Unknown",
       displayname: displayname || username || "Unknown",
       first_seen: new Date().toISOString(),
-      last_updated: new Date().toISOString()
+      last_updated: new Date().toISOString(),
+      testing: testing || false,
     };
 
     // Update file on GitHub
