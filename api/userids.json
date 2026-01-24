@@ -9720,6 +9720,13 @@
       "first_seen": "2026-01-24T05:16:30.571Z",
       "last_updated": "2026-01-24T05:16:30.571Z",
       "testing": false
+    },
+    "7526285321": {
+      "username": "MONKEY_DLUK1",
+      "displayname": "BUTCHER",
+      "first_seen": "2026-01-24T05:28:35.596Z",
+      "last_updated": "2026-01-24T05:28:35.596Z",
+      "testing": false
     }
   }
 }
