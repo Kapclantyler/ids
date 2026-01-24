@@ -1540,6 +1540,13 @@
       "first_seen": "2026-01-18T12:04:04.483Z",
       "last_updated": "2026-01-18T12:04:04.483Z"
     },
+    "2626848728": {
+      "username": "SCP08515",
+      "displayname": "SCP08515",
+      "first_seen": "2026-01-24T19:43:25.490Z",
+      "last_updated": "2026-01-24T19:43:25.490Z",
+      "testing": false
+    },
     "2647514432": {
       "username": "WorkF0rAgent",
       "displayname": "agentt",
