@@ -10672,6 +10672,13 @@
       "first_seen": "2026-01-25T02:41:00.507Z",
       "last_updated": "2026-01-25T02:41:00.507Z",
       "testing": false
+    },
+    "5042541338": {
+      "username": "best_maloch0",
+      "displayname": "CAPYBARA",
+      "first_seen": "2026-01-25T02:51:52.208Z",
+      "last_updated": "2026-01-25T02:51:52.208Z",
+      "testing": false
     }
   }
 }
