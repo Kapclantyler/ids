@@ -11309,6 +11309,13 @@
       "first_seen": "2026-01-25T14:04:06.006Z",
       "last_updated": "2026-01-25T14:04:06.006Z",
       "testing": false
+    },
+    "9065804688": {
+      "username": "bot853867",
+      "displayname": "bot853867",
+      "first_seen": "2026-01-25T14:18:17.109Z",
+      "last_updated": "2026-01-25T14:18:17.109Z",
+      "testing": false
     }
   }
 }
