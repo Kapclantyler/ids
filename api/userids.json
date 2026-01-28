@@ -14263,6 +14263,13 @@
       "first_seen": "2026-01-28T12:03:10.090Z",
       "last_updated": "2026-01-28T12:03:10.090Z",
       "testing": true
+    },
+    "5242067084": {
+      "username": "stalcicq",
+      "displayname": "stalcicq",
+      "first_seen": "2026-01-28T12:13:58.823Z",
+      "last_updated": "2026-01-28T12:13:58.823Z",
+      "testing": true
     }
   }
 }
