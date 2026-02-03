@@ -22923,6 +22923,13 @@
       "first_seen": "2026-02-03T04:58:04.416Z",
       "last_updated": "2026-02-03T04:58:04.416Z",
       "testing": true
+    },
+    "10288163011": {
+      "username": "vaiChorar1233",
+      "displayname": "Emulador",
+      "first_seen": "2026-02-03T05:03:48.077Z",
+      "last_updated": "2026-02-03T05:03:48.077Z",
+      "testing": true
     }
   }
 }
