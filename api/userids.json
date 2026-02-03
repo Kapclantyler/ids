@@ -23602,6 +23602,13 @@
       "first_seen": "2026-02-03T15:28:43.826Z",
       "last_updated": "2026-02-03T15:28:43.826Z",
       "testing": false
+    },
+    "7539547379": {
+      "username": "erka_20032",
+      "displayname": "scripts_Rossua",
+      "first_seen": "2026-02-03T15:30:11.669Z",
+      "last_updated": "2026-02-03T15:30:11.669Z",
+      "testing": false
     }
   }
 }
