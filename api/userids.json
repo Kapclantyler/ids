@@ -23609,6 +23609,13 @@
       "first_seen": "2026-02-03T15:30:11.669Z",
       "last_updated": "2026-02-03T15:30:11.669Z",
       "testing": false
+    },
+    "6098611296": {
+      "username": "FixYourOpsec",
+      "displayname": "ptrace_syscall",
+      "first_seen": "2026-02-03T15:37:06.041Z",
+      "last_updated": "2026-02-03T15:37:06.041Z",
+      "testing": false
     }
   }
 }
