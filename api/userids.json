@@ -25576,6 +25576,13 @@
       "first_seen": "2026-02-04T22:34:38.551Z",
       "last_updated": "2026-02-04T22:34:38.551Z",
       "testing": false
+    },
+    "5444299501": {
+      "username": "izukumidoriya121240",
+      "displayname": "malware",
+      "first_seen": "2026-02-04T22:36:38.677Z",
+      "last_updated": "2026-02-04T22:36:38.677Z",
+      "testing": false
     }
   }
 }
