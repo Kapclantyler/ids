@@ -25485,6 +25485,13 @@
       "first_seen": "2026-02-04T21:28:00.389Z",
       "last_updated": "2026-02-04T21:28:00.389Z",
       "testing": false
+    },
+    "9058918874": {
+      "username": "exploitestin",
+      "displayname": "exploitestin",
+      "first_seen": "2026-02-04T21:35:23.521Z",
+      "last_updated": "2026-02-04T21:35:23.521Z",
+      "testing": false
     }
   }
 }
