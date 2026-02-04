@@ -6337,6 +6337,13 @@
       "first_seen": "2026-01-17T05:04:13.380Z",
       "last_updated": "2026-01-17T05:04:13.380Z"
     },
+    "4196746539": {
+      "username": "SIMULATOR_plq",
+      "displayname": "SHADOW",
+      "first_seen": "2026-02-04T11:22:35.137Z",
+      "last_updated": "2026-02-04T11:22:35.137Z",
+      "testing": false
+    },
     "4199295525": {
       "username": "alex0esa",
       "displayname": "Yosha",
