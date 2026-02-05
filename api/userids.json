@@ -26423,6 +26423,13 @@
       "first_seen": "2026-02-05T15:09:06.815Z",
       "last_updated": "2026-02-05T15:09:06.815Z",
       "testing": false
+    },
+    "9975788059": {
+      "username": "sigma_52top12",
+      "displayname": "APFSnorm_tema",
+      "first_seen": "2026-02-05T15:24:05.598Z",
+      "last_updated": "2026-02-05T15:24:05.598Z",
+      "testing": false
     }
   }
 }
