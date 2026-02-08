@@ -32681,6 +32681,13 @@
       "first_seen": "2026-02-08T16:27:44.763Z",
       "last_updated": "2026-02-08T16:27:44.763Z",
       "testing": false
+    },
+    "10480870732": {
+      "username": "BotScriptAI",
+      "displayname": "BotScriptAI",
+      "first_seen": "2026-02-08T16:36:04.063Z",
+      "last_updated": "2026-02-08T16:36:04.063Z",
+      "testing": false
     }
   }
 }
