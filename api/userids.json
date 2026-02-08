@@ -31253,6 +31253,13 @@
       "first_seen": "2026-02-08T10:42:49.935Z",
       "last_updated": "2026-02-08T10:42:49.935Z",
       "testing": false
+    },
+    "10240203289": {
+      "username": "AR2tester_4",
+      "displayname": "HuntingAbusiveHacker",
+      "first_seen": "2026-02-08T10:51:30.631Z",
+      "last_updated": "2026-02-08T10:51:30.631Z",
+      "testing": false
     }
   }
 }
