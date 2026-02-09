@@ -1525,6 +1525,13 @@
       "first_seen": "2026-02-09T07:12:38.411Z",
       "last_updated": "2026-02-09T07:12:38.411Z",
       "testing": false
+    },
+    "9952419182": {
+      "username": "MORAD_VNX",
+      "displayname": "VNX_HAKER",
+      "first_seen": "2026-02-09T07:22:56.125Z",
+      "last_updated": "2026-02-09T07:22:56.125Z",
+      "testing": false
     }
   }
 }
