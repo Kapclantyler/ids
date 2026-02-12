@@ -5298,6 +5298,13 @@
       "first_seen": "2026-02-12T02:39:14.713Z",
       "last_updated": "2026-02-12T02:39:14.713Z",
       "testing": false
+    },
+    "9724278490": {
+      "username": "Freedata59",
+      "displayname": "Freedata59",
+      "first_seen": "2026-02-12T02:56:07.880Z",
+      "last_updated": "2026-02-12T02:56:07.880Z",
+      "testing": true
     }
   }
 }
