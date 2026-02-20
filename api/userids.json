@@ -14972,6 +14972,13 @@
       "first_seen": "2026-02-20T04:34:29.331Z",
       "last_updated": "2026-02-20T04:34:29.331Z",
       "testing": false
+    },
+    "10470733848": {
+      "username": "Amanda_088022",
+      "displayname": "Amanda_088022",
+      "first_seen": "2026-02-20T04:39:28.922Z",
+      "last_updated": "2026-02-20T04:39:28.922Z",
+      "testing": true
     }
   }
 }
