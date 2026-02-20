@@ -15280,6 +15280,13 @@
       "first_seen": "2026-02-20T09:01:18.771Z",
       "last_updated": "2026-02-20T09:01:18.771Z",
       "testing": true
+    },
+    "7660526325": {
+      "username": "Proat_trident",
+      "displayname": "GG_BOT",
+      "first_seen": "2026-02-20T09:02:36.639Z",
+      "last_updated": "2026-02-20T09:02:36.639Z",
+      "testing": true
     }
   }
 }
