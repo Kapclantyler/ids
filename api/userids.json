@@ -17086,6 +17086,13 @@
       "first_seen": "2026-02-21T04:25:05.135Z",
       "last_updated": "2026-02-21T04:25:05.135Z",
       "testing": false
+    },
+    "4541617741": {
+      "username": "GunShop_27289",
+      "displayname": "JKfi",
+      "first_seen": "2026-02-21T04:33:15.431Z",
+      "last_updated": "2026-02-21T04:33:15.431Z",
+      "testing": true
     }
   }
 }
