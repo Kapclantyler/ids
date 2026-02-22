@@ -19396,6 +19396,13 @@
       "first_seen": "2026-02-22T03:01:57.146Z",
       "last_updated": "2026-02-22T03:01:57.146Z",
       "testing": true
+    },
+    "8240422206": {
+      "username": "script_666662",
+      "displayname": "ghost",
+      "first_seen": "2026-02-22T03:03:30.807Z",
+      "last_updated": "2026-02-22T03:03:30.807Z",
+      "testing": true
     }
   }
 }
