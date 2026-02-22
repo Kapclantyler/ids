@@ -19739,6 +19739,13 @@
       "first_seen": "2026-02-22T06:08:19.152Z",
       "last_updated": "2026-02-22T06:08:19.152Z",
       "testing": true
+    },
+    "6020964687": {
+      "username": "JOHNSONV15",
+      "displayname": "JOHNSONV15",
+      "first_seen": "2026-02-22T06:09:59.204Z",
+      "last_updated": "2026-02-22T06:09:59.204Z",
+      "testing": false
     }
   }
 }
