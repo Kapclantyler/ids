@@ -22483,6 +22483,13 @@
       "first_seen": "2026-02-23T06:21:03.361Z",
       "last_updated": "2026-02-23T06:21:03.362Z",
       "testing": false
+    },
+    "6223405252": {
+      "username": "Jd2288998",
+      "displayname": "Jd2288998",
+      "first_seen": "2026-02-23T06:32:11.310Z",
+      "last_updated": "2026-02-23T06:32:11.310Z",
+      "testing": true
     }
   }
 }
