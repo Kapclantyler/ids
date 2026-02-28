@@ -33543,6 +33543,13 @@
       "first_seen": "2026-02-28T20:06:56.701Z",
       "last_updated": "2026-02-28T20:06:56.701Z",
       "testing": true
+    },
+    "4316156944": {
+      "username": "Barbattlers",
+      "displayname": "Barbattlers",
+      "first_seen": "2026-02-28T20:07:32.565Z",
+      "last_updated": "2026-02-28T20:07:32.565Z",
+      "testing": false
     }
   }
 }
