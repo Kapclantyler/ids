@@ -622,6 +622,13 @@
       "first_seen": "2026-02-28T22:36:28.000Z",
       "last_updated": "2026-02-28T22:36:28.000Z",
       "testing": false
+    },
+    "8742538148": {
+      "username": "nobru_armazenamento",
+      "displayname": "nobru_armazenamento",
+      "first_seen": "2026-02-28T22:38:52.865Z",
+      "last_updated": "2026-02-28T22:38:52.865Z",
+      "testing": true
     }
   }
 }
