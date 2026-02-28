@@ -33550,6 +33550,13 @@
       "first_seen": "2026-02-28T20:07:32.565Z",
       "last_updated": "2026-02-28T20:07:32.565Z",
       "testing": false
+    },
+    "10368383973": {
+      "username": "Rush_Helix",
+      "displayname": "Rush_Helix",
+      "first_seen": "2026-02-28T20:08:03.868Z",
+      "last_updated": "2026-02-28T20:08:03.868Z",
+      "testing": true
     }
   }
 }
