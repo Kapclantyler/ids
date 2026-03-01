@@ -3492,6 +3492,13 @@
       "first_seen": "2026-03-01T15:30:14.676Z",
       "last_updated": "2026-03-01T15:30:14.676Z",
       "testing": false
+    },
+    "10024592352": {
+      "username": "XxAurora_LegendxX59",
+      "displayname": "XxAurora_LegendxX59",
+      "first_seen": "2026-03-01T15:34:30.503Z",
+      "last_updated": "2026-03-01T15:34:30.503Z",
+      "testing": true
     }
   }
 }
