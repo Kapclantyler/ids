@@ -5305,6 +5305,13 @@
       "first_seen": "2026-03-02T03:45:48.702Z",
       "last_updated": "2026-03-02T03:45:48.702Z",
       "testing": true
+    },
+    "10568575822": {
+      "username": "Dozer_clone",
+      "displayname": "GoingPlaces",
+      "first_seen": "2026-03-02T04:06:32.296Z",
+      "last_updated": "2026-03-02T04:06:32.296Z",
+      "testing": true
     }
   }
 }
