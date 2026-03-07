@@ -12760,6 +12760,13 @@
       "first_seen": "2026-03-07T00:50:58.139Z",
       "last_updated": "2026-03-07T00:50:58.139Z",
       "testing": true
+    },
+    "10430759021": {
+      "username": "AFTER_STOCK1",
+      "displayname": "AFTER_STOCK1",
+      "first_seen": "2026-03-07T00:58:59.468Z",
+      "last_updated": "2026-03-07T00:58:59.468Z",
+      "testing": true
     }
   }
 }
