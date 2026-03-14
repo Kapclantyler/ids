@@ -20012,6 +20012,13 @@
       "first_seen": "2026-03-14T13:53:59.243Z",
       "last_updated": "2026-03-14T13:53:59.243Z",
       "testing": false
+    },
+    "7427668392": {
+      "username": "npc_expert5001",
+      "displayname": "Soullux",
+      "first_seen": "2026-03-14T13:55:04.300Z",
+      "last_updated": "2026-03-14T13:55:04.300Z",
+      "testing": false
     }
   }
 }
