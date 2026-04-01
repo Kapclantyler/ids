@@ -24688,6 +24688,13 @@
       "first_seen": "2026-04-01T11:50:25.644Z",
       "last_updated": "2026-04-01T11:50:25.644Z",
       "testing": false
+    },
+    "9495495126": {
+      "username": "Autko_farella",
+      "displayname": "Bot",
+      "first_seen": "2026-04-01T15:43:38.516Z",
+      "last_updated": "2026-04-01T15:43:38.516Z",
+      "testing": false
     }
   }
 }
