@@ -28426,6 +28426,13 @@
       "first_seen": "2026-04-17T18:30:08.706Z",
       "last_updated": "2026-04-17T18:30:08.706Z",
       "testing": false
+    },
+    "9879552282": {
+      "username": "ET_120Hz",
+      "displayname": "ET_120Hz",
+      "first_seen": "2026-04-17T19:06:56.751Z",
+      "last_updated": "2026-04-17T19:06:56.751Z",
+      "testing": false
     }
   }
 }
