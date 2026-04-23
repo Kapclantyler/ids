@@ -29798,6 +29798,13 @@
       "first_seen": "2026-04-23T16:09:03.353Z",
       "last_updated": "2026-04-23T16:09:03.353Z",
       "testing": false
+    },
+    "4713539557": {
+      "username": "root_rooms2",
+      "displayname": "EFT_TeR1lla",
+      "first_seen": "2026-04-23T16:50:59.600Z",
+      "last_updated": "2026-04-23T16:50:59.600Z",
+      "testing": false
     }
   }
 }
