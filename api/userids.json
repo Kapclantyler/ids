@@ -32570,6 +32570,13 @@
       "first_seen": "2026-05-08T20:27:33.172Z",
       "last_updated": "2026-05-08T20:27:33.172Z",
       "testing": false
+    },
+    "10924570364": {
+      "username": "w_exploit3",
+      "displayname": "w_exploit3",
+      "first_seen": "2026-05-08T21:07:38.004Z",
+      "last_updated": "2026-05-08T21:07:38.004Z",
+      "testing": false
     }
   }
 }
