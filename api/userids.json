@@ -33277,6 +33277,13 @@
       "first_seen": "2026-05-15T05:31:17.692Z",
       "last_updated": "2026-05-15T05:31:17.692Z",
       "testing": false
+    },
+    "10513467032": {
+      "username": "vectorspace_ghosted",
+      "displayname": "vectorspace_ghosted",
+      "first_seen": "2026-05-15T15:17:35.840Z",
+      "last_updated": "2026-05-15T15:17:35.840Z",
+      "testing": false
     }
   }
 }
