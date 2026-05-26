@@ -930,6 +930,13 @@
       "first_seen": "2026-05-26T14:10:42.996Z",
       "last_updated": "2026-05-26T14:10:42.996Z",
       "testing": false
+    },
+    "4713539557": {
+      "username": "root_rooms2",
+      "displayname": "EFT_TeR1lla",
+      "first_seen": "2026-05-26T14:18:46.061Z",
+      "last_updated": "2026-05-26T14:18:46.061Z",
+      "testing": false
     }
   }
 }
