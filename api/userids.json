@@ -2666,6 +2666,13 @@
       "first_seen": "2026-06-05T07:43:43.363Z",
       "last_updated": "2026-06-05T07:43:43.363Z",
       "testing": false
+    },
+    "5449452885": {
+      "username": "vadimsonchik",
+      "displayname": "SCP96",
+      "first_seen": "2026-06-05T07:59:14.033Z",
+      "last_updated": "2026-06-05T07:59:14.033Z",
+      "testing": false
     }
   }
 }
