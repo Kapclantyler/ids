@@ -5676,6 +5676,13 @@
       "first_seen": "2026-06-23T11:43:44.009Z",
       "last_updated": "2026-06-23T11:43:44.009Z",
       "testing": false
+    },
+    "10513383248": {
+      "username": "embeddingfermat",
+      "displayname": "embeddingfermat",
+      "first_seen": "2026-06-23T12:06:56.333Z",
+      "last_updated": "2026-06-23T12:06:56.333Z",
+      "testing": false
     }
   }
 }
