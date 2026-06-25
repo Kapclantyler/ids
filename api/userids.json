@@ -5837,6 +5837,13 @@
       "first_seen": "2026-06-25T16:34:49.661Z",
       "last_updated": "2026-06-25T16:34:49.661Z",
       "testing": false
+    },
+    "5751972155": {
+      "username": "Ghost2_109",
+      "displayname": "SIGMA",
+      "first_seen": "2026-06-25T20:22:46.119Z",
+      "last_updated": "2026-06-25T20:22:46.119Z",
+      "testing": false
     }
   }
 }
