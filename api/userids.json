@@ -10569,6 +10569,13 @@
       "first_seen": "2026-08-08T02:11:16.008Z",
       "last_updated": "2026-08-08T02:11:16.008Z",
       "testing": false
+    },
+    "6026535179": {
+      "username": "CEW0BH",
+      "displayname": "RIP_FIX",
+      "first_seen": "2026-08-08T02:46:07.129Z",
+      "last_updated": "2026-08-08T02:46:07.129Z",
+      "testing": false
     }
   }
 }
